@@ -40,8 +40,20 @@ const Header = () => {
         <Container>
             <AppBar position="static" style={{ boxShadow: 'none' }}>
                 <Container maxWidth="xl" style={{ background: 'white' }}>
+                    
                     <Toolbar disableGutters >
+                    <IconButton
+                                size="large"
+                                aria-label="account of current user"
+                                aria-controls="menu-appbar"
+                                aria-haspopup="true"
+                                onClick={handleOpenNavMenu}
+                                color="inherit"
+                            > 
+                                <MenuIcon sx={{display:{md: 'none'}}} style={{ color: 'black' }} />
+                            </IconButton>
                         <img src="https://i.ibb.co/RgZ9Ygy/Group-4280.png" alt="" sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+                        
                         <Typography
                             variant="h6"
                             noWrap
@@ -62,16 +74,7 @@ const Header = () => {
                         </Typography>
 
                         <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-                            <IconButton
-                                size="large"
-                                aria-label="account of current user"
-                                aria-controls="menu-appbar"
-                                aria-haspopup="true"
-                                onClick={handleOpenNavMenu}
-                                color="inherit"
-                            >
-                                <MenuIcon style={{ color: 'black' }} />
-                            </IconButton>
+                            
                             <Menu
                                 id="menu-appbar"
                                 anchorEl={anchorElNav}
