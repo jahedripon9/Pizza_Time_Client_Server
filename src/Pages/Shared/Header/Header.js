@@ -12,6 +12,7 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import TextField from '@mui/material/TextField';
+import { Link } from 'react-router-dom';
 
 const pages = ['Home', 'Menu', 'Promo'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -91,7 +92,11 @@ const Header = () => {
                             >
                                 {pages.map((page) => (
                                     <MenuItem key={page} onClick={handleCloseNavMenu} >
-                                        <Typography textAlign="center" >{page}</Typography>
+                                        <Typography textAlign="center" >
+                                            <Link style={{textDecoration:'none', color:'black'}} to={`/${page}`}>
+                                                {page}
+                                            </Link>
+                                        </Typography>
                                     </MenuItem>
                                 ))}
                             </Menu>
@@ -124,7 +129,9 @@ const Header = () => {
                                     onClick={handleCloseNavMenu}
                                     sx={{ my: 2, color: 'black', display: 'block', alignItems: 'center' }}
                                 >
-                                    {page}
+                                    <Link style={{textDecoration:'none', color:'black'}} to={`/${page}`}>
+                                                {page}
+                                            </Link>
                                 </Button>
                             ))}
                             <Box
